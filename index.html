@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pendulum Simulation</title>
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+
+            .rangeslider {
+                width: 50%;
+            }
+
+            .slider {
+                -webkit-appearance: none; 
+                background: #FCF3CF  ; 
+                width: 50%; 
+                height: 20px; 
+                opacity: 2;         
+            }
+
+            .slider::-webkit-slider-thumb { 
+                -webkit-appearance: none; 
+                cursor: pointer; 
+                background: #34495E  ; 
+                width: 5%; 
+                height: 20px; 
+            } 
+
+            .slider:hover {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" width=1 height=1></canvas>
+
+        <script src="constants.js"></script>
+        <script src="pendulum.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
