@@ -6,6 +6,9 @@ class Pendulum {
         this.theta_inital = theta;
         this.length = length;
         this.size = size;
+
+        this.damped = false;
+        this.b = 0;
     }
 
     draw() {
@@ -27,5 +30,20 @@ class Pendulum {
 
     update(time) {
         this.theta = this.theta_inital * Math.cos(Math.sqrt(g / this.length) * time);
+        if (this.damped) {
+            let gamma = this.b / (2 * this.size);
+            this.theta *= Math.pow(Math.E, -gamma * time);
+        }
+    }
+
+    changeLength(newLength) { this.length = newLength; }
+    changeMass(newMass) { this.size = newMass; }
+    changeAngle(newAngle) { 
+        this.theta = newAngle; 
+        this.theta_inital = newAngle;
+    }
+    changeDamped(newB) {
+        this.damped = !this.damped;
+        this.b = newB;
     }
 }
